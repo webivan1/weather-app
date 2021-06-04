@@ -6,5 +6,7 @@ type PropTypes = {
 }
 
 export const Container: FC<PropTypes> = ({ children }) => (
-  <div className={style.Container}>{children}</div>
+  <div data-testid="container" className={style.Container}>
+    {children}
+  </div>
 )

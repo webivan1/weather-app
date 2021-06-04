@@ -7,6 +7,7 @@ type PropTypes = {
 
 export const ImageWeather: FC<PropTypes> = ({ icon, className = '' }) => (
   <img
+    data-testid="image-weather"
     src={`http://openweathermap.org/img/wn/${icon}.png`}
     className={className}
     width={40}

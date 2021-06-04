@@ -7,10 +7,10 @@ export type ForecastWeatherItemType = WeatherItemResponseType & {
 
 export type ForecastWeatherResponseType = {
   cod: number | string
+  list: ForecastWeatherItemType[]
   city: {
     timezone: number
   }
-  list: ForecastWeatherItemType[]
 }
 
 export type ForecastWeatherStateType = {

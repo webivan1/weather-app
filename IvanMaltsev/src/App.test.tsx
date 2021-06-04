@@ -1,15 +1,13 @@
 import React from 'react'
-import { render } from '@testing-library/react'
-import { Provider } from 'react-redux'
-import { store } from './store/store'
 import { App } from './App'
+import { renderWithRedux } from './store/testStore'
 
-test('renders learn react link', () => {
-  const { getByText } = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-  )
+test('Renders heading text', () => {
+  const { getByText, getByTestId } = renderWithRedux(<App />)
 
-  expect(getByText(/weather/i)).toBeInTheDocument()
+  expect(getByText(/London/i)).toBeInTheDocument()
+  expect(getByTestId('header')).toBeInTheDocument()
+  expect(getByTestId('current-weather')).toBeInTheDocument()
+  expect(getByTestId('forecast')).toBeInTheDocument()
+  expect(getByTestId('progress-bar')).toBeInTheDocument()
 })

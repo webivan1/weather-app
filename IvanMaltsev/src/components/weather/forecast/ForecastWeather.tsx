@@ -1,20 +1,14 @@
-import { FC, useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../../../store/hooks'
+import { FC } from 'react'
 import { ForecastWeatherItem } from './ForecastWeatherItem'
-import { fetchForecastWeatherAsync } from '../../../store/weather/forecast/forecastWeatherSlice'
+import { useForecastWeather } from './useForecastWeather'
 
 export const ForecastWeather: FC = () => {
-  const dispatch = useAppDispatch()
-  const { forecast, loader } = useAppSelector((state) => state.forecastWeather)
-
-  useEffect(() => {
-    dispatch(fetchForecastWeatherAsync())
-  }, [dispatch])
+  const { forecast } = useForecastWeather()
 
   return (
-    <div>
+    <div data-testid="forecast">
       {forecast.map((item) => (
-        <ForecastWeatherItem weather={item} key={item.dt} />
+        <ForecastWeatherItem data-testid={`weather-item-${item.dt}`} weather={item} key={item.dt} />
       ))}
     </div>
   )

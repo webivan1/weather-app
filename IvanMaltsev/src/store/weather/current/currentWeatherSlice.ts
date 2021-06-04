@@ -25,7 +25,7 @@ export const currentWeatherSlice = createSlice({
     },
     setError: (state, { payload }: PayloadAction<string>) => {
       state.errorMessage = payload
-      console.error(payload)
+      console.log(payload)
     },
     setWeather: (state, { payload }: PayloadAction<WeatherItemResponseType>) => {
       state.weather = payload

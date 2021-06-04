@@ -6,8 +6,8 @@ type PropTypes = {
   children: ReactNode
 }
 
-export const HeaderTop: FC = ({ children }) => (
-  <div className={style.Header}>
+export const HeaderTop: FC<PropTypes> = ({ children }) => (
+  <div data-testid="header" className={style.Header}>
     <Container>{children}</Container>
   </div>
 )

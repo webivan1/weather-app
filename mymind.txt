@@ -2,7 +2,7 @@
 
 - I should think about the store
     - install all dependencies redux toolkit
-    - I have a current weather in London and some weather for few days
+    - I have a current weather in London and some forecast weather for few days
         - I can use one state for weather or 2 states for current weather and list of weather for another days
         - If i have the same format of data, but i need in current time for current weather, i will create 2 states
         for current weather and forecast
@@ -19,3 +19,10 @@
         - MON 18deg 09:00 clear
         - MON 21deg 13:00 cloudy
 
+- I should animate a deg text when it has been changed
+
+- I would like to write more tests, make sliders for different times, choose cities or detect city by IP user.
+
+PS I hope to get any response about my code, it is very important for me
+
+Thanks.

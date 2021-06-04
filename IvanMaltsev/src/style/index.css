@@ -14,3 +14,33 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+.animated-value {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: pulse;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scaleX(1.02) }
+  5% { transform: scaleX(0.98) }
+  10% { transform: scaleX(1.02) }
+  15% { transform: scaleX(0.98) }
+  20% { transform: scaleX(1.02) }
+  25% { transform: scaleX(0.98) }
+  30% { transform: scaleX(1.02) }
+  35% { transform: scaleX(0.98) }
+  40% { transform: scaleX(1.02) }
+  45% { transform: scaleX(0.98) }
+  50% { transform: scaleX(1.02) }
+  55% { transform: scaleX(0.98) }
+  60% { transform: scaleX(1.02) }
+  65% { transform: scaleX(0.98) }
+  70% { transform: scaleX(1.02) }
+  75% { transform: scaleX(0.98) }
+  80% { transform: scaleX(1.02) }
+  85% { transform: scaleX(0.98) }
+  90% { transform: scaleX(1.02) }
+  95% { transform: scaleX(0.98) }
+  100% { transform: scaleX(1) }
+}
