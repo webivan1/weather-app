@@ -29,6 +29,7 @@ export const currentWeatherSlice = createSlice({
     },
     setWeather: (state, { payload }: PayloadAction<WeatherItemResponseType>) => {
       state.weather = payload
+      state.weather.main.temp = Math.round(state.weather.main.temp)
     },
   },
 })

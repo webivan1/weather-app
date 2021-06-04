@@ -1,16 +1,29 @@
 .Item {
   display: flex;
-  height: 62px;
+  height: 70px;
   align-items: center;
   border-radius: 3px;
   background: var(--bg-item);
   box-sizing: border-box;
-  padding: 8px 12px;
+  padding: 11px 15px;
   margin-bottom: 5px;
   text-transform: uppercase;
 }
 
 .Week, .Deg {
-  font-size: 18px;
+  font-size: 22px;
   margin-right: 12px;
+}
+
+.Desc {
+  margin-left: auto;
+  text-align: right;
+}
+
+.Image {
+  font-size: 0;
+}
+
+.DescText {
+  font-size: 11px;
 }

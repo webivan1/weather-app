@@ -26,7 +26,10 @@ export const forecastWeatherSlice = createSlice({
       console.error(payload)
     },
     setForecastWeather: (state, { payload }: PayloadAction<ForecastWeatherItemType[]>) => {
-      state.forecast = filterForecastWeather(payload)
+      state.forecast = filterForecastWeather(payload).map((weather) => {
+        weather.main.temp = Math.round(weather.main.temp)
+        return weather
+      })
     },
   },
 })

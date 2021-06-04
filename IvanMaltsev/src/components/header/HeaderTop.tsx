@@ -1,5 +1,5 @@
-import { FC, ReactNode } from "react";
-import { Container } from "../container/Container";
+import { FC, ReactNode } from 'react'
+import { Container } from '../container/Container'
 import style from './HeaderTop.module.css'
 
 type PropTypes = {
@@ -8,8 +8,6 @@ type PropTypes = {
 
 export const HeaderTop: FC = ({ children }) => (
   <div className={style.Header}>
-    <Container>
-      {children}
-    </Container>
+    <Container>{children}</Container>
   </div>
 )
