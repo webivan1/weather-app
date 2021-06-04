@@ -1,7 +1,10 @@
+import { Moment } from "moment";
 import { WeatherItemResponseType } from "../types";
 
 export type ForecastWeatherItemType = WeatherItemResponseType & {
   dt_text: string
+  date?: Moment
+  week?: string
 }
 
 export type ForecastWeatherResponseType = {
@@ -14,7 +17,6 @@ export type ForecastWeatherResponseType = {
 
 export type ForecastWeatherStateType = {
   loader: boolean
-  fetched: boolean
   errorMessage?: string
-  forecast: WeatherItemResponseType[]
+  forecast: ForecastWeatherItemType[]
 }
