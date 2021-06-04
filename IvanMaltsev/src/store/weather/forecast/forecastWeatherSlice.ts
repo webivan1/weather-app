@@ -34,11 +34,11 @@ export const forecastWeatherSlice = createSlice({
 export const { startFetching, stopFetching, setError, setForecastWeather } =
   forecastWeatherSlice.actions
 
-export const fetchCurrentWeatherAsync = (): AppThunk => async (dispatch) => {
+export const fetchForecastWeatherAsync = (): AppThunk => async (dispatch) => {
   try {
     dispatch(startFetching())
-    const { code, list } = await fetchForecastWeatherApi()
-    if (+code === 200) {
+    const { cod, list } = await fetchForecastWeatherApi()
+    if (+cod === 200) {
       dispatch(setForecastWeather(list))
     } else {
       dispatch(setError('Error fetching current weather'))

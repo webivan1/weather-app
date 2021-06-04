@@ -1,7 +1,7 @@
 import { WeatherItemResponseType } from '../types'
 
 export type CurrentWeatherResponseType = WeatherItemResponseType & {
-  code: number
+  cod: number | string
 }
 
 export type CurrentWeatherStateType = {

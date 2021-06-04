@@ -8,7 +8,7 @@ export type ForecastWeatherItemType = WeatherItemResponseType & {
 }
 
 export type ForecastWeatherResponseType = {
-  code: number
+  cod: number | string
   city: {
     timezone: number
   }

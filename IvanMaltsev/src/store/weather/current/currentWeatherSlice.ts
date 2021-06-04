@@ -38,8 +38,8 @@ export const { startFetching, stopFetching, setError, setWeather } = currentWeat
 export const fetchCurrentWeatherAsync = (): AppThunk => async (dispatch) => {
   try {
     dispatch(startFetching())
-    const { code, ...weather } = await fetchCurrentWeatherApi()
-    if (+code === 200) {
+    const { cod, ...weather } = await fetchCurrentWeatherApi()
+    if (+cod === 200) {
       dispatch(setWeather(weather))
     } else {
       dispatch(setError('Error fetching current weather'))

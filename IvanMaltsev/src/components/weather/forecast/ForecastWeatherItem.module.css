@@ -1,0 +1,16 @@
+.Item {
+  display: flex;
+  height: 62px;
+  align-items: center;
+  border-radius: 3px;
+  background: var(--bg-item);
+  box-sizing: border-box;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.Week, .Deg {
+  font-size: 18px;
+  margin-right: 12px;
+}

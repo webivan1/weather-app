@@ -5,7 +5,7 @@
   --bg-header: #32353e;
   --font-color: white;
   --primary-color: #f59c0d;
-  --bg-item: linear-gradient(45deg, #57585c, #636468)
+  --bg-item: linear-gradient(180deg, #57585c 70%, #636468)
 }
 
 body {
