@@ -1,9 +1,7 @@
-import { Moment } from 'moment'
 import { WeatherItemResponseType } from '../types'
 
 export type ForecastWeatherItemType = WeatherItemResponseType & {
-  dt_text: string
-  date?: Moment
+  dt_txt: string
   week?: string
 }
 

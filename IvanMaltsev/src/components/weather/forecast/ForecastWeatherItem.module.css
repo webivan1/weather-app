@@ -10,9 +10,12 @@
   text-transform: uppercase;
 }
 
+.Week {
+  width: 80px;
+}
+
 .Week, .Deg {
   font-size: 22px;
-  margin-right: 12px;
 }
 
 .Desc {
@@ -25,5 +28,5 @@
 }
 
 .DescText {
-  font-size: 11px;
+  font-size: 10px;
 }

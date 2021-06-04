@@ -10,7 +10,7 @@ export const App: FC = () => {
     <>
       <HeaderTop>
         <CurrentWeather />
-        <ReloadBar />
+        <ReloadBar seconds={60} />
       </HeaderTop>
 
       <Container>

@@ -9,8 +9,8 @@ export const ImageWeather: FC<PropTypes> = ({ icon, className = '' }) => (
   <img
     src={`http://openweathermap.org/img/wn/${icon}.png`}
     className={className}
-    width={50}
-    height={50}
+    width={40}
+    height={40}
     alt=""
   />
 )

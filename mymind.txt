@@ -11,7 +11,7 @@
     - I can filter times and choose optimal time, from 12 to 20pm
     - Or i should show a weather in this times only for next days
         - I will try the second variant
-        - I guess, i will work with times and i need to install the library momentjs
+        - I guess, i will work with times and i need to install a library momentjs
 
     I would like to make a slider of weathers for per day with different times
         For example:
