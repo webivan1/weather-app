@@ -3,8 +3,8 @@ export type WeatherItemResponseType = {
   main: {
     temp: number
   }
-  weather: Array<{
+  weather: {
     description: string
     icon: string
-  }>
+  }[]
 }

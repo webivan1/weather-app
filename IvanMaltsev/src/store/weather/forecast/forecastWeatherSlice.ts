@@ -1,24 +1,24 @@
-import { ForecastWeatherItemType, ForecastWeatherStateType } from "./types";
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { filterForecastWeather } from "./helper";
-import { AppThunk } from "../../store";
-import { fetchForecastWeatherApi } from "./api";
+import { ForecastWeatherItemType, ForecastWeatherStateType } from './types'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { filterForecastWeather } from './helper'
+import { AppThunk } from '../../store'
+import { fetchForecastWeatherApi } from './api'
 
 const initialState: ForecastWeatherStateType = {
   loader: false,
   errorMessage: undefined,
-  forecast: []
+  forecast: [],
 }
 
 export const forecastWeatherSlice = createSlice({
   name: 'forecastWeather',
   initialState,
   reducers: {
-    startFetching: state => {
+    startFetching: (state) => {
       state.loader = true
       state.errorMessage = undefined
     },
-    stopFetching: state => {
+    stopFetching: (state) => {
       state.loader = false
     },
     setError: (state, { payload }: PayloadAction<string>) => {
@@ -27,13 +27,14 @@ export const forecastWeatherSlice = createSlice({
     },
     setForecastWeather: (state, { payload }: PayloadAction<ForecastWeatherItemType[]>) => {
       state.forecast = filterForecastWeather(payload)
-    }
-  }
+    },
+  },
 })
 
-export const { startFetching, stopFetching, setError, setForecastWeather } = forecastWeatherSlice.actions
+export const { startFetching, stopFetching, setError, setForecastWeather } =
+  forecastWeatherSlice.actions
 
-export const fetchCurrentWeatherAsync = (): AppThunk => async dispatch => {
+export const fetchCurrentWeatherAsync = (): AppThunk => async (dispatch) => {
   try {
     dispatch(startFetching())
     const { code, list } = await fetchForecastWeatherApi()

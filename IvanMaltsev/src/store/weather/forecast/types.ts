@@ -1,5 +1,5 @@
-import { Moment } from "moment";
-import { WeatherItemResponseType } from "../types";
+import { Moment } from 'moment'
+import { WeatherItemResponseType } from '../types'
 
 export type ForecastWeatherItemType = WeatherItemResponseType & {
   dt_text: string

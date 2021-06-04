@@ -1,4 +1,4 @@
-import { FC, ReactNode } from "react";
+import { FC, ReactNode } from 'react'
 import style from './Container.module.css'
 
 type PropTypes = {
@@ -6,7 +6,5 @@ type PropTypes = {
 }
 
 export const Container: FC<PropTypes> = ({ children }) => (
-  <div className={style.Container}>
-    {children}
-  </div>
+  <div className={style.Container}>{children}</div>
 )

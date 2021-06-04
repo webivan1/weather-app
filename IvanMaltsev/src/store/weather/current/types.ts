@@ -1,4 +1,4 @@
-import { WeatherItemResponseType } from "../types";
+import { WeatherItemResponseType } from '../types'
 
 export type CurrentWeatherResponseType = WeatherItemResponseType & {
   code: number
