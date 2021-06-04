@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+:root {
+  --bg-color: #101012;
+  --bg-header: #32353e;
+  --font-color: white;
+  --primary-color: #f59c0d;
+  --bg-item: linear-gradient(45deg, #57585c, #636468)
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
