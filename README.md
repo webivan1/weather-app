@@ -1,19 +1,21 @@
 ### Weather app
-________
+______
 
 **Install**
 
-1) `git clone https://github.com/webivan1/weather-app.git`
-2) `cd IvanMaltsev`
-3) `yarn`
-4) create env file `env.local`
+`git clone https://github.com/webivan1/weather-app.git`
+`yarn`
+`create env file env.local`
+
+You should register https://openweathermap.org/api and get an api key
+
 ```
 REACT_APP_WEATHER_API_KEY={YOUR_API_KEY}
 ```
 
 **Development**
 
-`yarn start`
+yarn start
 
 Open the link http://localhost:3000
 
