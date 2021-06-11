@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { ForecastWeatherItemType } from '../../../store/weather/forecast/types'
 import style from './ForecastWeatherItem.module.css'
 import { ImageWeather } from '../image/ImageWeather'
-import { useAnimateValue } from '../../animate-value/useAnimateValue'
+import { useAnimateValue } from '../../../hooks/useAnimateValue'
 
 type PropTypes = {
   weather: ForecastWeatherItemType

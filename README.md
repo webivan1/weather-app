@@ -13,6 +13,9 @@ create environment file `env.local`
 
 ```
 REACT_APP_WEATHER_API_KEY={YOUR_API_KEY}
+REACT_APP_CITY_NAME=London
+REACT_APP_WEATHER_CITY_NAME=London,UK
+REACT_APP_WEATHER_TIMEZONE=GTM
 ```
 
 **Development**

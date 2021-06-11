@@ -1,6 +1,6 @@
+import moment from 'moment'
 import { fetchCurrentWeatherApi } from '../../../store/weather/current/api'
 import { CurrentWeatherResponseType } from '../../../store/weather/current/types'
-import moment from 'moment'
 import { renderWithRedux } from '../../../store/testStore'
 import { CurrentWeather } from './CurrentWeather'
 
@@ -43,7 +43,7 @@ describe('CurrentWeather', () => {
     const lastUpdated = await findByTestId('cur-weather-updated')
     const deg = await findByTestId('cur-weather-temp')
 
-    expect(lastUpdated.textContent.trim()).toEqual('GTM')
+    expect(lastUpdated.textContent.trim()).toEqual(process.env.REACT_APP_WEATHER_TIMEZONE ?? '')
     expect(deg.textContent.trim()).toEqual('°')
   })
 })

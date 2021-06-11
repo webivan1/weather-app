@@ -3,49 +3,55 @@ import { useEffect, useState } from 'react'
 import { fetchCurrentWeatherAsync } from '../../../store/weather/current/currentWeatherSlice'
 import { fetchForecastWeatherAsync } from '../../../store/weather/forecast/forecastWeatherSlice'
 
-let timer: ReturnType<typeof setInterval> | undefined
+let animationId: ReturnType<typeof requestAnimationFrame> | undefined
+let previousTime: number | undefined
 
 export const useProgressBar = (seconds: number) => {
   const dispatch = useAppDispatch()
-  const [second, setSecond] = useState<number>(seconds)
+  const [progressBarWidth, setProgressBarWidth] = useState<number>()
+  const [curSecond, setSecond] = useState<number>(0)
 
-  const startTimer = (): void => {
-    timer = setInterval(() => setSecond((cur) => cur - 1), 1000)
+  const animationProgressBar = async (time: number) => {
+    if (!previousTime) {
+      previousTime = time
+    }
+
+    setSecond((time - previousTime) / 1000)
+
+    animationId = requestAnimationFrame(animationProgressBar)
   }
 
-  const stopTimer = (): void => {
-    if (timer) {
-      clearInterval(timer)
+  const callUpdateWeather = async (): Promise<void> => {
+    if (animationId) {
+      cancelAnimationFrame(animationId)
     }
+    previousTime = undefined
+    await Promise.all([dispatch(fetchCurrentWeatherAsync()), dispatch(fetchForecastWeatherAsync())])
+    animationId = requestAnimationFrame(animationProgressBar)
   }
 
   useEffect(() => {
-    if (second === 0) {
-      stopTimer()
-      ;(async () => {
-        await Promise.all([
-          dispatch(fetchCurrentWeatherAsync()),
-          dispatch(fetchForecastWeatherAsync()),
-        ])
-
-        setSecond(seconds)
-        startTimer()
-      })()
-    }
-  }, [second])
-
-  useEffect(() => {
-    startTimer()
+    animationId = requestAnimationFrame(animationProgressBar)
 
     return () => {
-      stopTimer()
+      if (animationId) {
+        cancelAnimationFrame(animationId)
+      }
     }
   }, [dispatch])
 
-  const progressBarWidth = Math.ceil((second * 100) / seconds)
+  useEffect(() => {
+    ;(async () => {
+      if (curSecond < seconds) {
+        setProgressBarWidth((100 * curSecond) / seconds)
+      } else {
+        await callUpdateWeather()
+      }
+    })()
+  }, [curSecond])
 
   return {
-    second,
+    second: Math.ceil(seconds - curSecond),
     progressBarWidth,
   }
 }

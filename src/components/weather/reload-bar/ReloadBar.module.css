@@ -19,7 +19,9 @@
   position: absolute;
   background: var(--primary-color);
   left: 0;
+  right: 0;
   top: 0;
   bottom: 0;
-  transition: width 0.3s ease;
+  transform: translateX(0);
+  transition: transform 0.1s ease;
 }
